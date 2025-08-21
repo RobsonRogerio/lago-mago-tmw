@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "IdTransacao",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "IdCliente",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DtCriacao",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "QtdePontos",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescSistemaOrigem",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "op",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "type": "struct"
+}
