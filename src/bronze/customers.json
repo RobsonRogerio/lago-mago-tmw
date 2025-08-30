@@ -46,13 +46,13 @@
       "metadata": {},
       "name": "DtCriacao",
       "nullable": true,
-      "type": "string"
+      "type": "timestamp"
     },
     {
       "metadata": {},
       "name": "DtAtualizacao",
       "nullable": true,
-      "type": "string"
+      "type": "timestamp"
     },
     {
       "metadata": {},

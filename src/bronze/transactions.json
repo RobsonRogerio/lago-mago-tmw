@@ -16,7 +16,7 @@
       "metadata": {},
       "name": "DtCriacao",
       "nullable": true,
-      "type": "string"
+      "type": "timestamp"
     },
     {
       "metadata": {},
