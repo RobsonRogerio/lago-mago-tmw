@@ -1,65 +1,65 @@
 {
-  "fields": [
-    {
-      "metadata": {},
-      "name": "IdCliente",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "FlEmail",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "FlTwitch",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "FlYouTube",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "FlBlueSky",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "FlInstagram",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "QtdePontos",
-      "nullable": true,
-      "type": "string"
-    },
-    {
-      "metadata": {},
-      "name": "DtCriacao",
-      "nullable": true,
-      "type": "timestamp"
-    },
-    {
-      "metadata": {},
-      "name": "DtAtualizacao",
-      "nullable": true,
-      "type": "timestamp"
-    },
-    {
-      "metadata": {},
-      "name": "op",
-      "nullable": true,
-      "type": "string"
-    }
-  ],
-  "type": "struct"
+    "fields": [
+        {
+            "metadata": {},
+            "name": "IdCliente",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "FlEmail",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "FlTwitch",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "FlBlueSky",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "FlInstagram",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "QtdePontos",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "DtCriacao",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "DtAtualizacao",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "op",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "change_timestamp",
+            "nullable": true,
+            "type": "timestamp"
+        }
+    ],
+    "type": "struct"
 }
