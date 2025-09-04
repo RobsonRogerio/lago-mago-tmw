@@ -1,0 +1,47 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "IdTransacaoProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "IdTransacao",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "IdProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "QtdeProduto",
+      "nullable": true,
+      "type": "long"
+    },
+    {
+      "metadata": {},
+      "name": "VlProduto",
+      "nullable": true,
+      "type": "decimal(12,2)"
+    },
+    {
+      "metadata": {},
+      "name": "op",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "change_timestamp",
+      "nullable": true,
+      "type": "timestamp"
+    }
+  ],
+  "type": "struct"
+}
