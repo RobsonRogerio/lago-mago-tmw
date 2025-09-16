@@ -7,6 +7,11 @@
     },
     "webhook_notifications": {},
     "timeout_seconds": 0,
+    "schedule": {
+      "quartz_cron_expression": "35 20 16 * * ?",
+      "timezone_id": "America/Sao_Paulo",
+      "pause_status": "UNPAUSED"
+    },
     "max_concurrent_runs": 1,
     "tasks": [
       {
@@ -66,9 +71,9 @@
     "queue": {
       "enabled": true
     },
-    "performance_target": "STANDARD",
     "run_as": {
       "user_name": "robson.rogerio@gmail.com"
-    }
+    },
+    "performance_target": "STANDARD"
   }
 }
