@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "IdProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescNomeProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescDescricaoProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescCategoriaProduto",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "type": "struct"
+}
