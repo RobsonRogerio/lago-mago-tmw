@@ -31,6 +31,22 @@
         "webhook_notifications": {}
       },
       {
+        "task_key": "bronze_products",
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "src/bronze/ingestao",
+          "base_parameters": {
+            "tablename": "products",
+            "id_field": "IdProduto",
+            "timestamp_field": "change_timestamp"
+          },
+          "source": "GIT"
+        },
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "webhook_notifications": {}
+      },
+      {
         "task_key": "bronze_transactions",
         "run_if": "ALL_SUCCESS",
         "notebook_task": {
@@ -55,6 +71,82 @@
             "tablename": "transactions_product",
             "id_field": "IdTransacaoProduto",
             "timestamp_field": "change_timestamp"
+          },
+          "source": "GIT"
+        },
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "webhook_notifications": {}
+      },
+      {
+        "task_key": "silver_cliente",
+        "depends_on": [
+          {
+            "task_key": "bronze_customers"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "src/silver/ingestao",
+          "base_parameters": {
+            "tablename": "cliente"
+          },
+          "source": "GIT"
+        },
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "webhook_notifications": {}
+      },
+      {
+        "task_key": "silver_produto",
+        "depends_on": [
+          {
+            "task_key": "bronze_products"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "src/silver/ingestao",
+          "base_parameters": {
+            "tablename": "produtos"
+          },
+          "source": "GIT"
+        },
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "webhook_notifications": {}
+      },
+      {
+        "task_key": "silver_transacao_produto",
+        "depends_on": [
+          {
+            "task_key": "bronze_transactions_product"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "src/silver/ingestao",
+          "base_parameters": {
+            "tablename": "transacao_produto"
+          },
+          "source": "GIT"
+        },
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "webhook_notifications": {}
+      },
+      {
+        "task_key": "silver_transacoes",
+        "depends_on": [
+          {
+            "task_key": "bronze_transactions"
+          }
+        ],
+        "run_if": "ALL_SUCCESS",
+        "notebook_task": {
+          "notebook_path": "src/silver/ingestao",
+          "base_parameters": {
+            "tablename": "transacoes"
           },
           "source": "GIT"
         },
