@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "metadata": {},
+      "name": "IdProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescNomeProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescDescricaoProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {},
+      "name": "DescCategoriaProduto",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+    "metadata": {},
+    "name": "op",
+    "nullable": true,
+    "type": "string"
+    },
+    {
+    "metadata": {},
+    "name": "change_timestamp",
+    "nullable": true,
+    "type": "timestamp"
+    }
+  ],
+  "type": "struct"
+}
