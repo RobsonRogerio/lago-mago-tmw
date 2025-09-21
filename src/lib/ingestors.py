@@ -26,24 +26,15 @@ class ingestor:
         return df
 
     def save(self, df):
-        # Caminho exclusivo para gravar os arquivos Delta
-        tmp_path = f"/mnt/delta/{self.schemaname}/{self.tablename}"
-
-        # Grava os dados no formato Delta no caminho temporário
-        (df.coalesce(1)
-            .write
-            .format("delta")
-            .mode("overwrite")
-            .save(tmp_path)
-        )
-
-        # Cria a tabela Delta já com CDF ativo na versão 0
         table_full_name = f"{self.catalog}.{self.schemaname}.{self.tablename}"
+
+        # Salva a tabela diretamente no metastore Delta
+        df.write.format("delta").mode("overwrite").saveAsTable(table_full_name)
+
+        # Habilita Change Data Feed (CDF) imediatamente após a criação
         self.spark.sql(f"""
-            CREATE OR REPLACE TABLE {table_full_name}
-            TBLPROPERTIES (delta.enableChangeDataFeed = true)
-            USING DELTA
-            LOCATION '{tmp_path}'
+            ALTER TABLE {table_full_name}
+            SET TBLPROPERTIES (delta.enableChangeDataFeed = true)
         """)
 
         return True
