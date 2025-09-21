@@ -12,9 +12,11 @@ class ingestor:
         self.set_schema()
 
     def set_schema(self):
+        # Importa o schema definido para a tabela
         self.data_schema = utils.import_schema(self.tablename)
     
     def load(self, path):
+        # Lê os dados do caminho informado usando o schema definido
         df = (
             self.spark.read
             .format(self.format)
@@ -24,12 +26,10 @@ class ingestor:
         return df
 
     def save(self, df):
-        table = f"{self.catalog}.{self.schemaname}.{self.tablename}"
-
-        # caminho exclusivo para a tabela
+        # Caminho exclusivo para gravar os arquivos Delta
         tmp_path = f"/mnt/delta/{self.schemaname}/{self.tablename}"
 
-        # grava os dados em formato delta no caminho
+        # Grava os dados no formato Delta no caminho temporário
         (df.coalesce(1)
             .write
             .format("delta")
@@ -37,9 +37,10 @@ class ingestor:
             .save(tmp_path)
         )
 
-        # cria a tabela já com CDF habilitado desde a versão 0
+        # Cria a tabela Delta já com CDF ativo na versão 0
+        table_full_name = f"{self.catalog}.{self.schemaname}.{self.tablename}"
         self.spark.sql(f"""
-            CREATE OR REPLACE TABLE {table}
+            CREATE OR REPLACE TABLE {table_full_name}
             TBLPROPERTIES (delta.enableChangeDataFeed = true)
             USING DELTA
             LOCATION '{tmp_path}'
